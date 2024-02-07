@@ -47,8 +47,9 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
   
     //update object
-    mesh.position.y = Math.sin(elapsedTime)
-    mesh.position.x = Math.cos(elapsedTime)
+    camera.position.y = Math.sin(elapsedTime)
+    camera.position.x = Math.cos(elapsedTime)
+    camera.lookAt(mesh.position)
     //render
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
